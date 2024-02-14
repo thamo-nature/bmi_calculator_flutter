@@ -1,20 +1,28 @@
 import 'package:flutter/material.dart';
+import './input_page.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(const BMICalculator());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class BMICalculator extends StatefulWidget {
+  const BMICalculator({super.key});
 
   @override
+  State<BMICalculator> createState() => _BMICalculatorState();
+}
+
+class _BMICalculatorState extends State<BMICalculator> {
+  @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
+    return MaterialApp(
+      theme: ThemeData.dark().copyWith(
+        appBarTheme: const AppBarTheme(backgroundColor: Colors.black87),
+        primaryColor: const Color(0xFF0A0E21),
+        scaffoldBackgroundColor: const Color(0xFF0A0E21),
+        //primaryColor: const Color(0xFFFFFFFF),
       ),
+      home: const InputPage(),
     );
   }
 }
